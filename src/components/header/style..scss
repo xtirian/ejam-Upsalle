@@ -1,0 +1,16 @@
+@use "../../sass/var" as *;
+@use "../../sass/mixin";
+
+.logoContainer{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5.5555556%;  
+
+  max-width: $max-mobile;
+  margin:0 auto;
+
+  @media screen and (min-width: 760px) {
+    padding: 33px 8.4666667%;
+    max-width: $max-desktop;
+  }
+}
