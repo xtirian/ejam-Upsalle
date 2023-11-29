@@ -35,12 +35,14 @@
 
 .slideGrid {
   width: 100%;
+  max-width: $max-desktop;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
 
   @media screen and (min-width: 760px) {
     justify-content: space-between;
-    padding: 0 100px;
+    padding: 0 10%;
   }
 }

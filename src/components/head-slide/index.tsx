@@ -2,20 +2,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./style.scss";
 import headerSlideMessages from "./messages";
-import { setInterval } from "timers";
 
-const HeaderSlide = () => {
-  //WINDOW RESIZE HANDLE
-  const [widthFlag, setWidthFlag] = useState(getWindowSize());
-
-  useEffect(() => {
-    function handleResize() {
-      setWidthFlag(getWindowSize());
-    }
-
-    window.addEventListener("resize", handleResize);
-  }, []);
-
+const HeaderSlide = ({widthWindow} : number | any) => {
+ 
   //SLIDE
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -48,33 +37,20 @@ const HeaderSlide = () => {
   useEffect(() => {
     let interval: any;
 
-    
-
-    if (widthFlag < 760) {
+    if (widthWindow < 760) {
       interval = setTimeout(() => 
         handleSlideChange("right"), 5000)
     } else {
       interval = null
     }
-
-    console.log(interval)
-
     return () => clearTimeout(interval);
     
   }, [currentSlide]);
 
-  
-
-  function startInterval() {
-    
-  }
-
-  startInterval();
-
   return (
     <div className="headerSlide_container">
       {/* BUTTON TO LEFT */}
-      {widthFlag < 760 && (
+      {widthWindow < 760 && (
         <button
           className="headerSlide_buttons"
           onClick={() => handleSlideChange("left")}
@@ -84,7 +60,7 @@ const HeaderSlide = () => {
       )}
 
       <div className="slideGrid">
-        {widthFlag < 760 ? (
+        {widthWindow < 760 ? (
           <div className="slideContainer">
             <img
               src={headerSlideMessages[currentSlide].ico}
@@ -93,8 +69,8 @@ const HeaderSlide = () => {
             <p>{headerSlideMessages[currentSlide].message}</p>
           </div>
         ) : (
-          headerSlideMessages.map((msg) => (
-            <div className="slideContainer">
+          headerSlideMessages.map((msg, index) => (
+            <div key={index} className="slideContainer">
               <img src={msg.ico} alt={msg.message} />
               <p>{msg.message}</p>
             </div>
@@ -103,7 +79,7 @@ const HeaderSlide = () => {
       </div>
 
       {/* BUTTON TO RIGHT */}
-      {widthFlag < 760 && (
+      {widthWindow < 760 && (
         <button
           className="headerSlide_buttons"
           onClick={() => handleSlideChange("right")}
@@ -114,10 +90,4 @@ const HeaderSlide = () => {
     </div>
   );
 };
-
-function getWindowSize() {
-  const { innerWidth } = window;
-  return innerWidth;
-}
-
 export default HeaderSlide;
