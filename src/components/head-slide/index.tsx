@@ -29,6 +29,7 @@ const HeaderSlide = () => {
         }
 
         break;
+
       case "left":
         if (currentSlide === 0) {
           setCurrentSlide(headerSlideMessages.length - 1);
@@ -45,18 +46,30 @@ const HeaderSlide = () => {
 
   //INTERVAL CHANGES IN HEADER MESSAGE
   useEffect(() => {
+    let interval: any;
+
     
 
-    const startInterval = () => {
-      let interval;
-      clearInterval(interval)
-      interval = setInterval( () => handleSlideChange("right"), 5000);      
-      
-}
-    if (widthFlag < 760) {      
-        startInterval()
+    if (widthFlag < 760) {
+      interval = setTimeout(() => 
+        handleSlideChange("right"), 5000)
+    } else {
+      interval = null
     }
+
+    console.log(interval)
+
+    return () => clearTimeout(interval);
+    
   }, [currentSlide]);
+
+  
+
+  function startInterval() {
+    
+  }
+
+  startInterval();
 
   return (
     <div className="headerSlide_container">
@@ -80,13 +93,12 @@ const HeaderSlide = () => {
             <p>{headerSlideMessages[currentSlide].message}</p>
           </div>
         ) : (
-          headerSlideMessages.map(msg => <div className="slideContainer">
-          <img
-            src={msg.ico}
-            alt={msg.message}
-          />
-          <p>{msg.message}</p>
-        </div>)
+          headerSlideMessages.map((msg) => (
+            <div className="slideContainer">
+              <img src={msg.ico} alt={msg.message} />
+              <p>{msg.message}</p>
+            </div>
+          ))
         )}
       </div>
 
