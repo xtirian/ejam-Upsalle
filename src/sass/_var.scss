@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
 
-//MAX WIDTHS
+//PADDINGS
+$pd-mobile: 5.5555556%;
+$pd-desktop: 8.4666667%;
 
+//MAX WIDTHS
 $max-mobile: 500px;
 $max-desktop: 1500px;
 
 // Backgrounds
 $bg: #252f3d;
+$bgmain: #f7f7f6;
 
 //TextColor
 $pw: #fff;
+$text-color1: #4d5254;
 
 //Font 
 $manrope: 'Manrope', sans-serif;

@@ -1,0 +1,21 @@
+@use '../sass/var' as *;
+@use '../sass/mixin' as *;
+
+.main_container{
+  background-color: $bgmain ;
+}
+
+.main_sect{
+  padding: 50px $pd-mobile;
+  max-width: $max-mobile;
+  
+}
+
+.main_title{
+  @include title1;
+}
+
+.main_subtitle{
+  margin-top: 24px;
+  @include subtitle1
+}
