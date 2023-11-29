@@ -1,0 +1,46 @@
+@use "../../sass/var" as *;
+@use "../../sass/mixin";
+
+.headerSlide_container {
+  background-color: $bg;
+  color: $pw;
+  @include mixin.text1;
+
+  padding: 0 26px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerSlide_buttons {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.slideContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  img,
+  p {
+    transition: ease-in-out;
+  }
+  transition-duration: 1s;
+}
+
+.slideGrid {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (min-width: 760px) {
+    justify-content: space-between;
+    padding: 0 100px;
+  }
+}
