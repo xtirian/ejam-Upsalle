@@ -26,9 +26,12 @@
 
 .main_title{
   @include title1;
+  text-transform: capitalize;
 }
 
 .main_subtitle{
   margin-top: 24px;
-  @include subtitle1
+  @include subtitle1;
+  text-transform: capitalize;
+
 }
