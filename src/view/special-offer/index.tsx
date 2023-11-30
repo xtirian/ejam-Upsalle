@@ -5,7 +5,7 @@ import React from "react";
 import './style.scss';
 import ClarifionPresentation from "@/components/app-presentation";
 
-const CheckoutView = ({ widthWindow }: number | any) => {
+const SpecialOffer = ({ widthWindow }: number | any) => {
 
 
 
@@ -33,4 +33,4 @@ const CheckoutView = ({ widthWindow }: number | any) => {
   );
 };
 
-export default CheckoutView;
+export default SpecialOffer;
