@@ -11,7 +11,6 @@ const Checker = ({ status, number, text }: string | any) => {
   const [checkStatus, setCheckStatus] = useState("waiting");
 
   function handleStatus() {
-    console.log(status);
     if (status === "completed") {
       setCheckStatus("completed");
     } else if (status === "active") {

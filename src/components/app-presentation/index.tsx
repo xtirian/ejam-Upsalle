@@ -6,7 +6,7 @@ const ClarifionPresentation = ({ widthWindow }: number | any) => {
   function starRate(stars: number) {
     let starNumber = [];
     for (let index = 0; index < stars; index++) {
-      starNumber.push(<img src="/images/icons/star.png" alt="index" />);
+      starNumber.push(<img key={index} src="/images/icons/star.png" alt="index" />);
     }
 
     return starNumber;
