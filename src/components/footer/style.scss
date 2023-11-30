@@ -1,0 +1,47 @@
+@use "../../sass/var" as *;
+@use "../../sass/mixin";
+
+.footerContainer {
+  background-color: $bg;
+  color: $pw;
+  @include mixin.text2;
+
+  padding: 28px;
+
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 24px;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .cardPattern1 {
+    position: relative;
+    display: block;
+    width: 1px;
+    height: 14px;
+  }
+  
+  .cardPattern1::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 1px;
+    height: 14px;
+    background-color: #cfcfcf;
+  }
+
+  .secureTextFooter{
+    text-transform: capitalize;
+  }
+}
+
+
