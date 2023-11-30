@@ -1,9 +1,8 @@
-.checkout_head_container{
+@use '../../sass/mixin' as *;
+
+
+.checkout_head_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.checkout_head_card{
-  
 }

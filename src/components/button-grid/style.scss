@@ -1,0 +1,125 @@
+@use "../../sass/var" as *;
+
+.buttons_container {
+  margin-top: 24px;
+
+  button{
+    cursor: pointer;
+  }
+}
+
+.confirmButton {
+  background-color: #59ae43;
+  color: $pw;
+  border: none;
+  border-radius: 50px;
+
+  width: 100%;
+  padding: 16px 0;
+
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.4rem;
+  line-height: 1.912rem;
+  font-weight: bold;
+
+  img {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.secureInfo_card {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-align: center;
+  text-transform: capitalize;
+  color: #4d5254;
+  margin-top: 12px;
+  padding: 8px 16px;
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 12px;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+.cardPattern1 {
+  position: relative;
+  display: block;
+  width: 1px;
+  height: 14px;
+}
+
+.cardPattern1::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  width: 1px;
+  height: 14px;
+  background-color: #cfcfcf;
+}
+
+.cardPattern2 {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 1px;
+}
+
+.cardPattern2::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 289px;
+  height: 1px;
+  background-color: #cfcfcf;
+}
+
+.returnButton {
+  width: 100%;
+
+  font-size: 1.2rem;
+  line-height: 1.639rem;
+
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: #f82c2c;
+
+  margin-top: 12px;
+}
+
+.satisfactionGrid {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  img {
+    width: 48px;
+    height: 48px;
+  }
+
+  p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17px;
+    text-align: left;
+    color: #4D5254;
+
+  }
+}

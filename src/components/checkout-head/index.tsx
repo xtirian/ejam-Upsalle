@@ -1,21 +1,32 @@
-'use client';
-import React from 'react'
+"use client";
+import React from "react";
+import Checker from "../checkout-checker";
 
-const CheckoutHead = ({widthWindow, activeStep} : number | any )  => {
+import './style.scss';
 
-  
-
+const CheckoutHead = ({ widthWindow, activeStep }: number | any) => {
   return (
-
-    <div className='checkout_head_container'>
+    <div className="checkout_head_container">
       <div className={`checkout_head_card`}>
-        <img src="/images/icons/check2.png" alt="" />
+       <Checker status="completed" number={1} text="Cart Review" />
       </div>
-      <div></div>
-      <div></div>
-      <div></div>
+      
+      <div className={`checkout_head_card`}>
+       <Checker status="completed" number={2} text="Checkout" />
+      </div>
+      
+      <div className={`checkout_head_card`}>
+       <Checker status="active" number={3} 
+       text="Special Offer"
+       />       
+      </div>
+      
+      <div className={`checkout_head_card`}>
+       <Checker status="" number={4} text="Confirmation" />
+      </div>
+      
     </div>
-  )
-}
+  );
+};
 
-export default CheckoutHead
+export default CheckoutHead;

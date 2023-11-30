@@ -1,14 +1,36 @@
-'use client';
-import CheckoutHead from '@/components/checkout-head'
-import React from 'react'
+"use client";
+import CheckoutHead from "@/components/checkout-head";
+import React from "react";
 
-const CheckoutView = ({widthWindow} : number | any) => {
+import './style.scss';
+import ClarifionPresentation from "@/components/app-presentation";
+
+const CheckoutView = ({ widthWindow }: number | any) => {
+
+
+
+
   return (
-    <div>      
-      <CheckoutHead activeStep={2} widthWindow={widthWindow} />
-      Checkout
-    </div>
-  )
-}
+    <section className="checkoutView_container">      
 
-export default CheckoutView
+      <h2 className="subtitle_page">
+        <span className="title_emphasis">ONE TIME ONLY</span> special price for
+        6 extra Clarifion for only{" "}
+        <span className="title_emphasis">$14 each</span> ($84.00 total!)
+      </h2>
+
+      {widthWindow < 760 && <img src="/images/mobile/hero/hero-mobile.png" alt="hero-mobile" className="heroimg-mobile" /> }
+
+      <ClarifionPresentation widthWindow={widthWindow} />
+
+      
+
+
+
+
+      
+    </section>
+  );
+};
+
+export default CheckoutView;

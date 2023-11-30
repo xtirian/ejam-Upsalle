@@ -15,7 +15,6 @@ const Header = () => {
     window.addEventListener("resize", handleResize);
   }, []);
 
-  console.log( typeof widthFlag)
 
 
   return (
@@ -37,7 +36,7 @@ const Header = () => {
 }
 
 function getWindowSize() {
-  const { innerWidth } = window;
+  const { innerWidth, innerHeight } = window;
   return innerWidth;
 }
 

@@ -5,6 +5,7 @@
   font-size: 1.2rem;
   line-height: 1.2rem;
   text-transform: uppercase;
+  font-family: $manrope;
 }
 
 @mixin title1 {
@@ -12,6 +13,7 @@
   font-size: 3.2rem;
   line-height: 4.48rem;
   text-align: center;
+  font-family: $manrope;
 }
 
 @mixin subtitle1 {
@@ -20,4 +22,26 @@
   line-height: 3rem;
   text-align: center;
   color: $text-color1;
+  font-family: $manrope;
+}
+
+@mixin subtitle2 {
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 3.36rem;
+  text-align: center;
+  font-family: $manrope;
+  text-transform: capitalize;
+}
+
+@mixin checker {
+  line-height: 1.54rem;
+  font-size: 1.4rem;
+  font-family: $manrope;
+}
+
+@mixin checker2{
+  line-height: 1.32rem;
+  font-size: 1.2rem;
+  font-family: $manrope;
 }

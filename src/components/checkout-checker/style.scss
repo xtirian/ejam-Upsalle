@@ -1,0 +1,46 @@
+@use '../../sass/var' as *;
+@use '../../sass/mixin' as *;
+
+%checker_prototype {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.active {
+  @extend %checker_prototype;
+  background-color: #2C7EF8;
+  color: $pw 
+}
+
+.waiting {
+  @extend %checker_prototype;
+  border: 1px solid #2C7EF8;
+  color: #2C7EF8
+}
+
+.completed {
+  @extend %checker_prototype;
+  background-color: #85BF55;
+
+}
+
+.checkoutChecker_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 8px;
+  flex-direction: column
+
+}
+
+.textActive{
+  @include checker2;    
+  font-weight: bold;
+}

@@ -3,6 +3,9 @@
 
 .main_container{
   background-color: $bgmain ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media screen and (min-width: 761px) {
     background-color: $pw;

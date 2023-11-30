@@ -1,0 +1,164 @@
+@use "../../sass/var" as *;
+
+.clarifion_presentation-container{
+  margin-top: 24px;
+}
+
+.clarifion_imgContainer{
+  background-color: #2c7ef8 ;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+}
+
+.clarifion_presentation{
+  display: flex;
+  gap: 16px;
+
+}
+
+.clarifion_content{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  margin-top: 11px;
+
+  width: 100%;
+}
+
+.star_container{
+  display: flex;
+  gap: 3px;
+
+  img{
+    width: 9.93px;
+    height: 9.93px;
+  }
+}
+
+.spanStock{
+  position: relative;  
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+.spanStock::before{
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #E3EEFF;
+  border-radius: 50%;
+}
+.spanStock::after{
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #2c7ef8;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-60%) translateX(-60%);
+
+}
+
+.clarifion_textStock{
+  color: #37465A;
+  display: flex;
+  gap: 16px;
+}
+
+.price_container{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  right: 0;
+  top: 0;
+
+  width: 57px;
+  height: 10px;
+}
+
+.oldPrice{
+  color: #969696;
+  text-decoration: line-through;
+
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.366rem;
+}
+
+.newPrice{
+  color: #2c7ef8;
+  text-decoration: line-through;
+
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.96rem;
+}
+
+.app_text_content{
+  font-size: 1.2rem;
+  line-height: 1.68rem;
+  text-align: center;
+  color: #4D5254;
+
+  margin-top: 16px;
+}
+
+.list_app_content{
+  list-style-type: none;
+  margin-top: 24px;
+
+  li {
+    img{
+      width: 12px;
+      height: 8px;
+    }
+
+    span{
+      margin-left: 12px;
+      font-size: 1.2rem;
+      line-height: 1.92rem;
+    }
+  }
+}
+
+.app_discount{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  background-color: #EDF3FD;
+  padding: 12px 16px;
+
+  margin-top: 36px;
+  border-radius: 10px;
+}
+
+.discount_pattern{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #2C7EF8;
+  font-size: 1.44rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $pw;
+}
+
+.discount_contetn{
+  font-size: 1.4rem;
+  line-height: 1.96rem;
+
+  span{
+    color: #2C7EF8;
+  }
+}

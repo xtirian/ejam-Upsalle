@@ -3,6 +3,8 @@ import Image from "next/image";
 import "./style.scss";
 import { useEffect, useState } from "react";
 import CheckoutView from "@/view/checkout";
+import ButtonGrid from "@/components/button-grid";
+import CheckoutHead from "@/components/checkout-head";
 
 export default function Home() {
   //HANDLE WIDTH RESIZE
@@ -28,7 +30,12 @@ export default function Home() {
         <h2 className="main_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing </h2>
       </section>
       <section className="main_sect_checkout">
+      <header>
+        <CheckoutHead activeStep={2} widthWindow={widthFlag} />
+      </header>
         <CheckoutView widthWindow={widthFlag} />
+
+        <ButtonGrid  />
       </section>
     </main>
   );

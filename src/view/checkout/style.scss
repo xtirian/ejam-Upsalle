@@ -1,0 +1,22 @@
+@use '../../sass/mixin' as *;
+
+.checkoutView_container{
+  margin: 0 auto;
+}
+
+.subtitle_page{
+  margin-top: 24px;
+  @include subtitle2
+}
+
+.title_emphasis{
+  color: #2c7ef8;
+  font-weight: 600;
+}
+
+.heroimg-mobile{
+  width: 320px;
+  height: 328px;
+  border-radius: 10px;
+  margin-top: 24px;
+}
