@@ -18,7 +18,7 @@ const ButtonGrid = ({ changeView }: number | any) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [widthWindow]);
   
 
   return (
