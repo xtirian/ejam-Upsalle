@@ -2,12 +2,12 @@
 import React from 'react'
 import './style.scss'
 
-const ButtonGrid = ({widthWindow}: number | any) => {
+const ButtonGrid = ({widthWindow, changeView}: number| any) => {
 
   //TODO pass the info of display to parent by clicking in button
   return (
     <div className='buttons_container'>
-      <button className='confirmButton'>
+      <button className='confirmButton' onClick={() => changeView("")}>
         YES - CLAIM MY DISCOUNT <img src="/images/icons/arrow.png" alt="arrow" />
       </button>
 
@@ -27,7 +27,7 @@ const ButtonGrid = ({widthWindow}: number | any) => {
           <img src="/images/CardsFlag.png" alt="cardsflag" className='cardsFlagImg' />
       </div>
 
-      <button className='returnButton'>No thanks, I don’t want this.</button>
+      <button className='returnButton' onClick={() => changeView("return")}>No thanks, I don’t want this.</button>
 
       <div className='satisfactionGrid'>
         <img src="/images/desktop/satisfaction.png" alt="" />
