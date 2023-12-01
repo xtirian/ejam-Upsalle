@@ -1,10 +1,25 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.scss";
 
-const ButtonGrid = ({ widthWindow, changeView }: number | any) => {
+const ButtonGrid = ({ changeView }: number | any) => {
+
+  const [widthWindow, setWidthWindow] = useState(window.innerWidth);
+
+  useEffect(() => {
+    function handleResize() {
+      setWidthWindow(window.innerWidth);
+    }
+
+    if (typeof window !== undefined) {
+      window.addEventListener("resize", handleResize);
+    }
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   
-  console.log(widthWindow)
 
   return (
     <div className="buttons_container">

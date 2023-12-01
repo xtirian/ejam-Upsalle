@@ -1,13 +1,17 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import ButtonGrid from "../button-grid";
 import ConfirmationView from "@/view/confirmation";
 import SpecialOffer from "@/view/special-offer";
 import CheckoutView from "@/view/checkout-view";
 import CheckoutHead from "../checkout-head";
 import CustomerCard from "../customer-review";
 
+const DynamicButtonGrid = dynamic(()=> import('@/components/button-grid/index'), {
+  ssr: false
+})
+
 import "./style.scss";
+import dynamic from "next/dynamic";
 
 const ConfirmationGrid = () => {
   const [widthFlag, setWidthFlag] = useState(window.innerWidth);
@@ -56,9 +60,8 @@ const ConfirmationGrid = () => {
       case "Checkout":
         result = [
           <CheckoutView key={1} />,
-          <ButtonGrid
+          <DynamicButtonGrid
             key={2}
-            widthWindow={widthFlag}
             changeView={changeView}
           />,
         ];
@@ -67,9 +70,8 @@ const ConfirmationGrid = () => {
       case "Special Offer":
         result = [
           <SpecialOffer key={1} widthWindow={widthFlag} />,
-          <ButtonGrid
+          <DynamicButtonGrid
             key={2}
-            widthWindow={widthFlag}
             changeView={changeView}
           />,
         ];
@@ -78,9 +80,8 @@ const ConfirmationGrid = () => {
       case "Confirmation":
         result = [
           <ConfirmationView key={1} />,
-          <ButtonGrid
+          <DynamicButtonGrid
             key={2}
-            widthWindow={widthFlag}
             changeView={changeView}
           />,
         ];
