@@ -4,25 +4,24 @@ import HeaderSlide from "../head-slide";
 
 import "./style..scss";
 
+
+
 const Header = () => {
-  const [innerWidth, setInnerWidth] = useState(0);
 
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      setInnerWidth(window.innerWidth);
-    }
-  }, []);
-
-  const [widthFlag, setWidthFlag] = useState(innerWidth);
+  const [widthFlag, setWidthFlag] = useState(window.innerWidth);
 
   useEffect(() => {
     function handleResize() {
-      setWidthFlag(innerWidth);
+      setWidthFlag(window.innerWidth);
     }
 
     if (typeof window !== undefined) {
       window.addEventListener("resize", handleResize);
     }
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   return (
