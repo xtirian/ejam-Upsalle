@@ -23,7 +23,8 @@ const ButtonGrid = ({widthWindow, changeView}: number| any) => {
           Secure 256-bit SSL encryption
           </p>
           </div>
-          <span className='cardPattern2'></span>
+          
+          <span className={widthWindow < 760? "cardPattern2": "cardPattern1"}></span>
           <img src="/images/CardsFlag.png" alt="cardsflag" className='cardsFlagImg' />
       </div>
 

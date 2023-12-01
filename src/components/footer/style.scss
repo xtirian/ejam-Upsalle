@@ -1,12 +1,18 @@
 @use "../../sass/var" as *;
 @use "../../sass/mixin";
 
-.footerContainer {
+.footerwrap{
   background-color: $bg;
   color: $pw;
   @include mixin.text2;
 
-  padding: 28px;
+  padding: 28px 0;
+
+}
+
+.footerContainer {
+  margin: 0 auto;
+  max-width: $max-desktop;
 
 
 
@@ -15,6 +21,12 @@
   align-items: center;
   justify-content: space-between;
   row-gap: 24px;
+
+  @media screen and (min-width: 760px) {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  }
 
   div {
     display: flex;

@@ -34,7 +34,7 @@ const Checker = ({ status, number, text }: string | any) => {
      
       <div className={checkStatus}>
         {checkStatus === "completed" ? (
-          <img src="/images/icons/check2.png" alt="" />
+          <img src="/images/icons/check2.png" alt="" className="checkimage" />
         ) : (
           <p>{number}</p>
         )}

@@ -1,37 +1,79 @@
-@use '../sass/var' as *;
-@use '../sass/mixin' as *;
+@use "../sass/var" as *;
+@use "../sass/mixin" as *;
 
-.main_container{
-  background-color: $bgmain ;
+.main_container {
+  background-color: $bgmain;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
 
   @media screen and (min-width: 761px) {
     background-color: $pw;
-    
+    max-width: $max-desktop;
   }
 }
 
-.main_sect{
+.main_sect {
   padding: 0 $pd-mobile;
   padding-top: 50px;
   max-width: $max-mobile;
+
+  @media screen and (min-width: 761px) {
+    max-width: $max-desktop;
+    padding-top: 19px !important;
+  }
 }
 
-.main_sect_checkout{
+.main_sect_checkout {
   padding: 32px $pd-mobile;
   max-width: $max-mobile;
+
+  @media screen and (min-width: 761px) {
+    padding: 60px 0;
+    max-width: $max-desktop;
+
+    .view_sect_container {
+      display: flex;
+      align-items: center;
+      background-color: $bgmain;
+      margin-top: 40px;
+      padding: 40px;
+      gap: 40px;
+      border-radius: 10px;
+    }
+  }
 }
 
-.main_title{
+.hero1_image_desktop {
+  width: 575px;
+  height: 591px;
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.main_title {
   @include title1;
   text-transform: capitalize;
+  @media screen and (min-width: 761px) {
+    @include title1Desktop;
+  }
 }
 
-.main_subtitle{
+.main_subtitle {
   margin-top: 24px;
   @include subtitle1;
   text-transform: capitalize;
 
+  @media screen and (min-width: 761px) {
+    @include subtitle1Desktop;
+  }
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
 }

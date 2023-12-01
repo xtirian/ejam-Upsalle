@@ -7,6 +7,7 @@ import CheckoutHead from "@/components/checkout-head";
 import SpecialOffer from "@/view/special-offer";
 import CheckoutView from "@/view/checkout-view";
 import ConfirmationView from "@/view/confirmation";
+import CustomerCard from "@/components/customer-review";
 
 export default function Home() {
   //HANDLE WIDTH RESIZE
@@ -96,7 +97,22 @@ export default function Home() {
         <header>
           <CheckoutHead activeStep={view} widthWindow={widthFlag} />
         </header>
-        {currentView}
+        <div className="view_sect_container">
+          {widthFlag > 760 && (
+            //TODO
+            <div className="heroContainer">
+              <img
+                src="/images/desktop/hero/hero1.png"
+                alt="hero1"
+                className="hero1_image_desktop"
+              />
+
+              {/* customer review card */}
+              <CustomerCard />
+            </div>
+          )}
+          <div className="current_view_div">{currentView}</div>
+        </div>
       </section>
     </main>
   );

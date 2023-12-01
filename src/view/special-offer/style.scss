@@ -6,7 +6,14 @@
 
 .subtitle_page{
   margin-top: 24px;
-  @include subtitle2
+  @include subtitle2;
+
+  
+  @media screen and (min-width: 761px) {
+    margin-top: 0;
+
+    @include subtitle2Desktop;
+  }
 }
 
 .title_emphasis{

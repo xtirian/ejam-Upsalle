@@ -2,11 +2,12 @@ import React from "react";
 import "./style.scss";
 
 const ClarifionPresentation = ({ widthWindow }: number | any) => {
-  const star = 5;
   function starRate(stars: number) {
     let starNumber = [];
     for (let index = 0; index < stars; index++) {
-      starNumber.push(<img key={index} src="/images/icons/star.png" alt="index" />);
+      starNumber.push(
+        <img key={index} src="/images/icons/star.png" alt="index" />
+      );
     }
 
     return starNumber;
@@ -20,31 +21,42 @@ const ClarifionPresentation = ({ widthWindow }: number | any) => {
             src={
               widthWindow < 760
                 ? "/images/mobile/hero/appProfile-mobile.png"
-                : "/images/mobile/hero/appprofile.png"
+                : "/images/desktop/hero/appprofile.png"
             }
             alt=""
           />
         </div>
         <div className="clarifion_content">
-          <h3>Clarifion Air Ionizer</h3>
+          <h3 className="appPresentation_title">Clarifion Air Ionizer</h3>
           <div className="star_container">{starRate(5)}</div>
           <div className="clarifion_textStock">
             <span className="spanStock"></span>
 
             <p>12 left in Stock</p>
+            
           </div>
 
           <div className="price_container">
             <span className="oldPrice">$180</span>
             <span className="newPrice">$84</span>
           </div>
+
+          {widthWindow > 760 && (
+          <p className="app_text_content">
+            Simply plug a Clarifion into any standard outlet and replace bulky,
+            expensive air purifiers with a simple.
+          </p>
+        )}
         </div>
+        
       </div>
 
-      <p className="app_text_content">
-        Simply plug a Clarifion into any standard outlet and replace bulky,
-        expensive air purifiers with a simple.
-      </p>
+      {widthWindow < 760 && (
+        <p className="app_text_content">
+          Simply plug a Clarifion into any standard outlet and replace bulky,
+          expensive air purifiers with a simple.
+        </p>
+      )}
 
       <ul className="list_app_content">
         <li>
@@ -69,7 +81,10 @@ const ClarifionPresentation = ({ widthWindow }: number | any) => {
 
       <div className="app_discount">
         <span className="discount_pattern">%</span>
-        <p className="discount_contetn">Save <span>53%</span> and get <span>6 extra Clarifision</span> {widthWindow < 500 && <br/>}for only <span>$14 Each</span>.</p>
+        <p className="discount_content">
+          Save <span>53%</span> and get <span>6 extra Clarifision</span>{" "}
+          {widthWindow < 500 && <br />}for only <span>$14 Each</span>.
+        </p>
       </div>
     </div>
   );

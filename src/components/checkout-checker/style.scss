@@ -1,5 +1,5 @@
-@use '../../sass/var' as *;
-@use '../../sass/mixin' as *;
+@use "../../sass/var" as *;
+@use "../../sass/mixin" as *;
 
 %checker_prototype {
   border-radius: 50%;
@@ -10,37 +10,53 @@
   justify-content: center;
   align-items: center;
 
-
+  @media screen and (min-width: 760px) {
+    width: 40px;
+  height: 40px;
+  } 
 }
 
 .active {
   @extend %checker_prototype;
-  background-color: #2C7EF8;
-  color: $pw 
+  background-color: #2c7ef8;
+  color: $pw;
 }
 
 .waiting {
   @extend %checker_prototype;
-  border: 1px solid #2C7EF8;
-  color: #2C7EF8
+  border: 1px solid #2c7ef8;
+  color: #2c7ef8;
 }
 
 .completed {
   @extend %checker_prototype;
-  background-color: #85BF55;
-
+  background-color: #85bf55;
 }
 
-.checkoutChecker_container{
+.checkoutChecker_container {
   display: flex;
   justify-content: center;
   align-items: center;
   row-gap: 8px;
-  flex-direction: column
+  flex-direction: column;
 
+  @include checker2;
+
+
+  @media screen and (min-width: 760px) {
+    flex-direction: row;
+    gap: 20px;
+
+    @include checker2Desktop;
+  }
 }
 
-.textActive{
-  @include checker2;    
+.textActive {
   font-weight: bold;
+}
+
+.checkimage{
+  @media screen and (min-width: 760px) {
+    width: 20px;
+  }
 }

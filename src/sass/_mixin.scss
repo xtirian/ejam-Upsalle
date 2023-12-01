@@ -23,10 +23,27 @@
   font-family: $manrope;
 }
 
+@mixin title1Desktop {
+  font-weight: 400;
+  font-size: 4.8rem;
+  line-height: 4.8rem;
+  text-align: center;
+  font-family: $manrope;
+}
+
 @mixin subtitle1 {
   font-weight: 400;
   font-size: 2.20rem;
   line-height: 3rem;
+  text-align: center;
+  color: $text-color1;
+  font-family: $manrope;
+}
+
+@mixin subtitle1Desktop {
+  font-weight: 400;
+  font-size: 2.40rem;
+  line-height: 2.4rem;
   text-align: center;
   color: $text-color1;
   font-family: $manrope;
@@ -41,6 +58,15 @@
   text-transform: capitalize;
 }
 
+@mixin subtitle2Desktop {
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 4.48rem;
+  text-align: left;
+  font-family: $manrope;
+  text-transform: capitalize;
+}
+
 @mixin checker {
   line-height: 1.54rem;
   font-size: 1.4rem;
@@ -50,5 +76,11 @@
 @mixin checker2{
   line-height: 1.32rem;
   font-size: 1.2rem;
+  font-family: $manrope;
+}
+
+@mixin checker2Desktop{
+  line-height: 2rem;
+  font-size: 2.2rem;
   font-family: $manrope;
 }

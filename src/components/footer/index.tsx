@@ -3,18 +3,20 @@ import "./style.scss";
 
 const Footer = () => {
   return (
-    <div className="footerContainer">
-      <div>
-        <p>Copyright (C) 2023</p>
+    <div className="footerwrap">
+      <footer className="footerContainer">
+        <div>
+          <p>Copyright (C) 2023</p>
 
-        <span className="cardPattern1"></span>
+          <span className="cardPattern1"></span>
 
-        <p>clarifionsupport@clarifion.com</p>
-      </div>
-      <div>
-        <img src="/images/icons/lock.png" alt="lockicon" />
-        <p className="secureTextFooter">Secure 256-bit SSL encryption.</p>
-      </div>
+          <p>clarifionsupport@clarifion.com</p>
+        </div>
+        <div>
+          <img src="/images/icons/lock.png" alt="lockicon" />
+          <p className="secureTextFooter">Secure 256-bit SSL encryption.</p>
+        </div>
+      </footer>
     </div>
   );
 };
