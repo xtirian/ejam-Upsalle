@@ -24,7 +24,7 @@ const ClarifionPresentation = ({ widthWindow }: number | any) => {
                 : "/images/desktop/hero/appprofile.png"
             }
             alt=""
-          />
+          />         
         </div>
         <div className="clarifion_content">
           <h3 className="appPresentation_title">Clarifion Air Ionizer</h3>

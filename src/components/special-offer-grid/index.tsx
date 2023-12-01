@@ -1,20 +1,15 @@
-'use client';
-import React, { useEffect, useState } from 'react'
-import ButtonGrid from '../button-grid';
-import ConfirmationView from '@/view/confirmation';
-import SpecialOffer from '@/view/special-offer';
-import CheckoutView from '@/view/checkout-view';
-import CheckoutHead from '../checkout-head';
-import CustomerCard from '../customer-review';
+"use client";
+import React, { useEffect, useState } from "react";
+import ButtonGrid from "../button-grid";
+import ConfirmationView from "@/view/confirmation";
+import SpecialOffer from "@/view/special-offer";
+import CheckoutView from "@/view/checkout-view";
+import CheckoutHead from "../checkout-head";
+import CustomerCard from "../customer-review";
 
-
-import './style.scss'
-
-
-
+import "./style.scss";
 
 const ConfirmationGrid = () => {
-  
   const [widthFlag, setWidthFlag] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -30,7 +25,7 @@ const ConfirmationGrid = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  
+
   //HANDLE VIEW
   const listOfViews = [
     "Cart Review",
@@ -61,21 +56,33 @@ const ConfirmationGrid = () => {
       case "Checkout":
         result = [
           <CheckoutView key={1} />,
-          <ButtonGrid key={2} changeView={changeView} />,
+          <ButtonGrid
+            key={2}
+            widthWindow={widthFlag}
+            changeView={changeView}
+          />,
         ];
         break;
 
       case "Special Offer":
         result = [
           <SpecialOffer key={1} widthWindow={widthFlag} />,
-          <ButtonGrid key={2} changeView={changeView} />,
+          <ButtonGrid
+            key={2}
+            widthWindow={widthFlag}
+            changeView={changeView}
+          />,
         ];
         break;
 
       case "Confirmation":
         result = [
           <ConfirmationView key={1} />,
-          <ButtonGrid key={2} changeView={changeView} />,
+          <ButtonGrid
+            key={2}
+            widthWindow={widthFlag}
+            changeView={changeView}
+          />,
         ];
         break;
 
@@ -94,31 +101,29 @@ const ConfirmationGrid = () => {
     }
   }, [view]);
 
-
-  
   return (
     <section className="main_sect_checkout">
-        <header>
-          <CheckoutHead activeStep={view} widthWindow={widthFlag} />
-        </header>
-        <div className="view_sect_container">
-          {widthFlag > 760 && (
-            //TODO
-            <div className="heroContainer">
-              <img
-                src="/images/desktop/hero/hero1.png"
-                alt="hero1"
-                className="hero1_image_desktop"
-              />
+      <header>
+        <CheckoutHead activeStep={view} widthWindow={widthFlag} />
+      </header>
+      <div className="view_sect_container">
+        {widthFlag > 760 && (
+          //TODO
+          <div className="heroContainer">
+            <img
+              src="/images/desktop/hero/hero1.png"
+              alt="hero1"
+              className="hero1_image_desktop"
+            />
 
-              {/* customer review card */}
-              <CustomerCard />
-            </div>
-          )}
-          <div className="current_view_div">{currentView}</div>
-        </div>
-      </section>
-  )
-}
+            {/* customer review card */}
+            <CustomerCard />
+          </div>
+        )}
+        <div className="current_view_div">{currentView}</div>
+      </div>
+    </section>
+  );
+};
 
-export default ConfirmationGrid
+export default ConfirmationGrid;
