@@ -10,15 +10,24 @@ import ConfirmationView from "@/view/confirmation";
 import CustomerCard from "@/components/customer-review";
 
 export default function Home() {
-  //HANDLE WIDTH RESIZE
-  const [widthFlag, setWidthFlag] = useState(getWindowSize());
+  const [innerWidth, setInnerWidth] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      setInnerWidth(window.innerWidth);
+    }
+  }, []);
+
+  const [widthFlag, setWidthFlag] = useState(innerWidth);
 
   useEffect(() => {
     function handleResize() {
-      setWidthFlag(getWindowSize());
+      setWidthFlag(innerWidth);
     }
 
-    window.addEventListener("resize", handleResize);
+    if (typeof window !== undefined) {
+      window.addEventListener("resize", handleResize);
+    }
   }, []);
 
   //HANDLE VIEW
@@ -116,9 +125,4 @@ export default function Home() {
       </section>
     </main>
   );
-}
-
-function getWindowSize() {
-  const { innerWidth } = window;
-  return innerWidth;
 }

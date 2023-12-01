@@ -29,8 +29,4 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 - ReactJS
 - NextJS
 
-TODO
-desktop screen
-implement functionality for buttons
-create a fake view to show the functionality in buttons
-IMPORTANT: att the checkout header to relate to the view on screen
+
